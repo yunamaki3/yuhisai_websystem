@@ -1,0 +1,67 @@
+<!-- ライトモードとダークモードの切り替えコード -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Light/Dark Mode Toggle</title>
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #000;
+    }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    
+    button {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Light/Dark Mode Toggle</h1>
+    <button onclick="toggleMode()" id="modeButton">Light</button>
+  </div>
+  
+  <script>
+    function toggleMode() {
+      const body = document.querySelector('body');
+      const button = document.querySelector('#modeButton');
+      
+      if (body.style.backgroundColor === 'rgb(255, 255, 255)') {
+        body.style.backgroundColor = '#333';
+        body.style.color = '#fff';
+        button.style.backgroundColor = '#fff';
+        button.style.color = '#333';
+        button.textContent = 'Dark';
+      } else {
+        body.style.backgroundColor = '#fff';
+        body.style.color = '#000';
+        button.style.backgroundColor = '#333';
+        button.style.color = '#fff';
+        button.textContent = 'Light';
+      }
+    }
+  </script>
+</body>
+</html>
