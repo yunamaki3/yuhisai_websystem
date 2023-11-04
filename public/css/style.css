@@ -117,18 +117,18 @@ h2 {
   border-radius: 10px;
   height: 48px;
   padding: 0 40px;
-  box-shadow: 0 4px 12px 0 #ecd9c2;
+  box-shadow: 0 4px 12px 0 #eab97d;
   transition: background-color 150ms, color 150ms;
 }
 
 .general-button:hover {
-  background-color: #ecd9c2;
+  background-color: #fff7ee;
 }
 
 .cct-list {
   text-decoration: none;
-  border-top: 1px solid #edebef;
-  border-bottom: 1px solid #edebef;
+  border-top: 1px solid #efedeb;
+  border-bottom: 1px solid #efedeb;
   font-size: 14px;
   display: flex;
   align-items: center;
