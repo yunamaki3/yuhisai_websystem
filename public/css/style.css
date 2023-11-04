@@ -2,15 +2,23 @@
 /* font-family: 'Roboto', sans-serif; */
 
 body {
-  background-color: #f5f4f6;
-  display: flex;
-  margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #f5f4f6;
+}
+
+body {
+  display: flex;
+}
+
+.detailbody {
+  margin: 0;
 }
 
 .sidepanel {
-  /* position: fixed;
-  left: 0; */
+  position: fixed;
+  left: 0;
   background-color: #fff;
   width: 230px;
   height: 100vh;
@@ -62,10 +70,11 @@ body {
 }
 
 .main {
-  flex: auto;
+  box-sizing: border-box;
+  width: 1000px;;
+  margin: 64px auto 0 auto;
+  padding: 0 36px;
 }
-<<<<<<< Updated upstream
-=======
 
 @media (max-width: 1230px) {
   .main{
@@ -162,4 +171,3 @@ li {
   margin: 0;
   color: #70637d;
 }
->>>>>>> Stashed changes
