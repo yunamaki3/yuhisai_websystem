@@ -2,14 +2,19 @@
 /* font-family: 'Roboto', sans-serif; */
 
 body {
-  background-color: #f5f4f6;
-  display: flex;
-  margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  background-color: #f5f4f6;
 }
 
+body {
+  display: flex;
+}
 
+.detailbody {
+  margin: 0;
+}
 
 .sidepanel {
   position: fixed;
