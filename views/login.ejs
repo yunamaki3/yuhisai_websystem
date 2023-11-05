@@ -22,19 +22,21 @@
         <a class="sidemenulist" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
         <a class="sidemenulist nowpage" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
       </div>
+      <div class="copyright">
+        <p>&copy; 2023 Yunamaki</p>
+      </div>
     </div>
   </div>
   <div class="main center">
     <div class="login">
       <h3>ログイン</h3>
       <form action="/login" method="post">
-        <p class="guide">メールアドレス</p>
+        <p class="guide">メールアドレス<span class="must">必須</span></p>
         <input class="general-input" type="text" name="email" placeholder="xxx@showa-shuei.ed.jp">
-        <p class="guide">パスワード</p>
+        <p class="guide">パスワード<span class="must">必須</span></p>
         <input class="general-input" type="password" name="password">
-        <input class="general-submit" type="submit" value="ログイン">
+        <button class="general-submit" type="submit"><span class="material-symbols-outlined">login</span>ログイン</button>
       </form>
-      
     </div>
   </div>
 </body>

@@ -50,6 +50,7 @@ body {
   display: inline-flex;
   vertical-align: middle;
   height: 50px;
+  /* display: block; */
   padding: 5px 16px 5px 32px;
   text-decoration: none;
   color: #70637d;
@@ -69,8 +70,9 @@ body {
 }
 
 .main {
+  min-height: 100vh;
   box-sizing: border-box;
-  width: 1000px;
+  width: 1000px;;
   margin: 64px auto 0 auto;
   padding: 0 36px;
 }
@@ -182,7 +184,7 @@ li {
 }
 
 .center {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   align-items: center;
   justify-content: center;
 }
@@ -191,6 +193,7 @@ li {
   color: #2d2832;
   margin-bottom: 0.5em;
   font-size: 14px;
+  justify-content: center;
 }
 
 .general-input {
@@ -208,6 +211,42 @@ li {
   border: 2px solid #e0953a;
 }
 
+.must {
+  color: #ec0000;
+  font-size: 12px;
+  margin: 0 5px;
+}
+
 .general-submit {
-  position: relative;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  display: inline-flex;
+  background-color: #e0953a;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: 2px solid transparent;
+  height: 48px;
+  padding: 0 40px;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.general-submit:hover {
+  background-color: #e2a150;
+}
+
+.copyright{
+  cursor: default;
+  position: absolute;
+  justify-content: center;
+  bottom: 40px;
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  color: #70637d;
+  font-size: 14px;
 }
