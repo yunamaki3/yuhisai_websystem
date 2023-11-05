@@ -50,7 +50,6 @@ body {
   display: inline-flex;
   vertical-align: middle;
   height: 50px;
-  /* display: block; */
   padding: 5px 16px 5px 32px;
   text-decoration: none;
   color: #70637d;
@@ -71,15 +70,9 @@ body {
 
 .main {
   box-sizing: border-box;
-  width: 1000px;;
+  width: 1000px;
   margin: 64px auto 0 auto;
   padding: 0 36px;
-}
-
-@media (max-width: 1230px) {
-  .main{
-    width: auto;
-  }
 }
 
 section {
@@ -93,6 +86,13 @@ h1 {
 h2 {
   margin-top: 20px;
   font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+h3 {
+  margin-top: 0px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -164,10 +164,50 @@ li {
   color: inherit;
 }
 
-.cct-date{
+.cct-date {
   margin-left: auto;
   text-align: right;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   color: #70637d;
+}
+
+.login {
+  background-color: #fff;
+  border: 1px solid #edebef;
+  box-shadow: 0 8px 16px 0 #edebef;
+  padding: 32px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.center {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide {
+  color: #2d2832;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+}
+
+.general-input {
+  font-family: 'Roboto', sans-serif;
+  width: 360px;
+  background-color: #f5f4f6;
+  height: 48px;
+  padding: 0 1em;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.general-input:focus {
+  border: 2px solid #e0953a;
+}
+
+.general-submit {
+  position: relative;
 }
