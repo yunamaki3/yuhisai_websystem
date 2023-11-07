@@ -260,18 +260,36 @@ li {
   text-align: center;
   padding: 5px 0 ;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 10px;
   position: absolute;
   bottom: 70px;
+  font-weight: 700;
 }
 
 .hellouser::after{
   border-bottom: 2px solid #e0953a;
   content: "";
-  display: block;
   height: 1px;
   left: 1.5rem;
   position: absolute;
   right: 1.5rem;
   top: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.userstate {
+  align-items: center;
+  width: min-content;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2px;
+  font-size: 14px;
+  padding: 3px 6px;
+  background-color: #fbf4eb;
+  color: #e0953a;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  text-align: center;
+  display: inline-block;
 }

@@ -27,9 +27,11 @@ app.use((req, res, next) => {
   if(req.session.userId === undefined){
     console.log("ログインしていません");
     res.locals.userName = "ゲスト";
+    res.locals.userStatus = "None";
   } else {
     console.log("ログインしています");
     res.locals.userName= req.session.userName;
+    res.locals.userStatus = req.session.userStatus;
   }
   next();
 });
@@ -59,6 +61,7 @@ app.post('/login', (req, res) => {
           //一時的処置。デプロイ時には変更する -> github-issue#121
           req.session.userId = results[0].id;
           req.session.userName = results[0].username;
+          req.session.userStatus = results[0].state;
           res.redirect('/');
           console.log("ログイン成功");
         }else{
