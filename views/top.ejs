@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;400;500;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+  <%- include('head') %>
 </head>
-<body class="mainbody">
-  <div class="sidepanel">
-    <div class="title">
-      <p>雄飛祭</p>
-      <p>オンライン</p>
-      <p>システム</p>
-    </div>
-    <div class="sidemenu">
-      <div class="home">
-        <a class="sidemenulist nowpage" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
-        <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
-      </div>
-    </div>
-    <div class="hellouser">
-      <p><%= locals.userName %></p>
-      <p>としてログイン中</p>
-      <p class="userstate"><%= locals.userStatus %></p>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2023 Yunamaki</p>
-    </div>
-  </div>
+<body>
+  <%- include('sidepanel') %>
   <div class="main">
     <h1>雄飛祭オンラインシステム</h1>
-    <h1>ようこそ、<%= locals.userName %> </h1>
     <section>
       <h2>実行委員会からのお知らせ</h2>
       <div class="container">

@@ -1,3 +1,5 @@
+// net start mysql57 にてmysqlを起動すること忘れずに
+
 const express = require('express');
 const session = require('express-session');
 const mysql = require('mysql');
@@ -74,6 +76,12 @@ app.post('/login', (req, res) => {
       }
     }
   )
+});
+
+app.get('/logout', (req, res) => {
+  req.session.destroy((error) => {
+    res.redirect('/');
+  });
 });
 
 app.listen(3000);

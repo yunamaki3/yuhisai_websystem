@@ -10,6 +10,11 @@ body {
 
 body {
   display: flex;
+  color: #000000;
+}
+
+a {
+  color: inherit;
 }
 
 .detailbody {
@@ -36,6 +41,7 @@ body {
 }
 
 .sidemenu {
+  position: relative;
   cursor: pointer;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -69,6 +75,8 @@ body {
   margin-right: 3px;
 }
 
+/* @media 1250px */
+
 .main {
   min-height: 100vh;
   box-sizing: border-box;
@@ -76,6 +84,10 @@ body {
   margin: 64px auto 0 auto;
   margin-left: 230px;
   padding: 0 36px;
+}
+
+a {
+  text-decoration: none;
 }
 
 section {
@@ -262,7 +274,7 @@ li {
   font-size: 14px;
   line-height: 10px;
   position: absolute;
-  bottom: 70px;
+  bottom: 110px;
   font-weight: 700;
 }
 
@@ -292,4 +304,29 @@ li {
   line-height: 1.2rem;
   text-align: center;
   display: inline-block;
+}
+
+.logout {
+  box-sizing: border-box;
+  align-items: center;
+  text-decoration: none;
+  width: 80%;
+  font-size: 14px;
+  align-items: center;
+  background-color: #fff;
+  color: #000000;
+  border: 2px solid #efefef;
+  border-radius: 6px;
+  padding: 0 40px;
+  line-height: 35px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logout:hover {
+  background-color: #efefef;
 }
