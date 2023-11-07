@@ -12,7 +12,7 @@
 </head>
 <body class="mainbody">
   <div class="sidepanel">
-    <div class="title">
+    <div class="title"">
       <p>雄飛祭</p>
       <p>オンライン</p>
       <p>システム</p>
@@ -30,12 +30,13 @@
   <div class="main center">
     <div class="login">
       <h3>ログイン</h3>
-      <form action="/login" method="post">
+      <form action="/login" method="POST">
         <p class="guide">メールアドレス<span class="must">必須</span></p>
         <input class="general-input" type="text" name="email" placeholder="xxx@showa-shuei.ed.jp">
         <p class="guide">パスワード<span class="must">必須</span></p>
         <input class="general-input" type="password" name="password">
-        <button class="general-submit" type="submit"><span class="material-symbols-outlined">login</span>ログイン</button>
+        <!-- <button class="general-submit" type="submit"><span class="material-symbols-outlined">login</span>ログイン</button> -->
+        <input class="general-submit" type="submit" value="ログイン">
       </form>
     </div>
   </div>

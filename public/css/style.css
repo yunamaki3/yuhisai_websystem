@@ -74,6 +74,7 @@ body {
   box-sizing: border-box;
   width: 1000px;;
   margin: 64px auto 0 auto;
+  margin-left: 230px;
   padding: 0 36px;
 }
 
@@ -218,6 +219,8 @@ li {
 }
 
 .general-submit {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
   justify-content: center;
   cursor: pointer;
   align-items: center;
@@ -249,4 +252,26 @@ li {
   text-align: center;
   color: #70637d;
   font-size: 14px;
+}
+
+.hellouser {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0 ;
+  font-size: 14px;
+  line-height: 16px;
+  position: absolute;
+  bottom: 70px;
+}
+
+.hellouser::after{
+  border-bottom: 2px solid #e0953a;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
 }

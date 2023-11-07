@@ -23,12 +23,17 @@
         <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
       </div>
     </div>
+    <div class="hellouser">
+      <p><%= locals.userName %></p>
+      <p>としてログイン中</p>
+    </div>
     <div class="copyright">
       <p>&copy; 2023 Yunamaki</p>
     </div>
   </div>
   <div class="main">
     <h1>雄飛祭オンラインシステム</h1>
+    <h1>ようこそ、<%= locals.userName %> </h1>
     <section>
       <h2>実行委員会からのお知らせ</h2>
       <div class="container">
@@ -72,9 +77,6 @@
         </div>
       </div>
     </section>
-    <div class="footer">
-      <p>&copy; 2023 Yunamaki</p>
-    </div>
   </div>
 </body>
 </html>
