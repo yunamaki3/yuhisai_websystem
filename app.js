@@ -60,21 +60,20 @@ app.get('/signup', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-  
+  const email = req.body.email;  
   connection.query(
     'SELECT * FROM users WHERE email = ?',
     [email],
     (error, results) => {
-      console.log(error);
       if(results.length > 0){
         const plain = req.body.password;
         const hash = results[0].password;
         bcrypt.compare(plain, hash, (error, isEqual) => {
+          console.log(isEqual);
           if(isEqual){
             req.session.userId = results[0].id;
             req.session.userName = results[0].username;
+            req.session.userStatus = results[0].status;
             res.redirect('/');
           }else{
             res.redirect('/login');
@@ -128,11 +127,12 @@ app.post('/signup',
   const password = req.body.password;
   bcrypt.hash(password,10,(error,hash) => {
     connection.query(
-      'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
+      'INSERT INTO users (username, email, password, state) VALUES (?, ?, ?, "Normal")',
       [username, email, hash],
       (error, results) => {
         req.session.userId = results.insertId;
         req.session.userName = username;
+        req.session.userStatus = "Normal";
         res.redirect('/');
       }
     );
