@@ -73,7 +73,7 @@ app.post('/login', (req, res) => {
           if(isEqual){
             req.session.userId = results[0].id;
             req.session.userName = results[0].username;
-            req.session.userStatus = results[0].status;
+            req.session.userStatus = results[0].state;
             res.redirect('/');
           }else{
             res.redirect('/login');
