@@ -7,9 +7,12 @@
   <div class="sidemenu">
     <div class="home">
       <a class="sidemenulist" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
+      <% if(locals.isLoggedIn){} else { %>
       <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
+      <% } %>
     </div>
   </div>
+  <% if(locals.isLoggedIn) { %>
   <div class="hellouser">
     <p><%= locals.userName %></p>
     <p>としてログイン中</p>
@@ -18,6 +21,7 @@
   <div class="logout">
     <a href="/logout">ログアウト</a>
   </div>
+  <% } %>
   <div class="copyright">
     <p>&copy; 2023 Yunamaki</p>
   </div>

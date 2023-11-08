@@ -27,10 +27,12 @@ app.use(
 
 app.use((req, res, next) => {
   if(req.session.userId === undefined){
+    res.locals.isLoggedIn = false;
     console.log("ログインしていません");
     res.locals.userName = "ゲスト";
     res.locals.userStatus = "None";
   } else {
+    res.locals.isLoggedIn = true;
     console.log("ログインしています");
     res.locals.userName= req.session.userName;
     res.locals.userStatus = req.session.userStatus;
