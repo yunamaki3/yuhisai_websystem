@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %>
+</head>
+<body>
+  <%- include('sidepanel') %>
+  <div class="main">
+    <!-- your code here -->
+    <h1>お知らせを投稿</h1>
+    <div class="container">
+      <form action="/postnews" method="post">
+        <% if (errors.length>0) { %>
+          <div class="error">
+            <% errors.forEach (error => { %>
+            <p class="errormessage"><%= error %></p>
+            <% }); %>
+          </div>
+        <% } %>
+        <p class="guide">タイトル<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="title">
+        <p class="guide">本文<span class="must">必須</span></p>
+        <textarea class="area-input" name="content" cols="30" rows="10"></textarea>
+        <input class="general-submit" type="submit" value="投稿">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
