@@ -330,3 +330,19 @@ li {
 .logout:hover {
   background-color: #efefef;
 }
+
+.error {
+  box-sizing: border-box;
+  background-color: #feecf0;
+  border: 2px solid #cc0f35;
+  border-radius: 5px;
+  padding: 8px 16px;
+  line-height: 2;
+  font-size: 14px;
+  font-weight: 700;
+  color: #cc0f35;
+}
+
+.errormessage {
+  margin: 0;
+}

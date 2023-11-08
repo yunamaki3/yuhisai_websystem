@@ -9,6 +9,7 @@
       <a class="sidemenulist" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
       <% if(locals.isLoggedIn){} else { %>
       <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
+      <a class="sidemenulist" href="/signup"><span class="material-symbols-outlined">new_label</span>新規登録</a>
       <% } %>
     </div>
   </div>
@@ -18,8 +19,8 @@
     <p>としてログイン中</p>
     <p class="userstate"><%= locals.userStatus %></p>
   </div>
-  <div class="logout">
-    <a href="/logout">ログアウト</a>
+  <div>
+    <a class="logout" href="/logout">ログアウト</a>
   </div>
   <% } %>
   <div class="copyright">
