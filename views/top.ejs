@@ -11,14 +11,14 @@
       <h2>実行委員会からのお知らせ</h2>
       <div class="container">
         <ul>
-          <% news.forEach((info) => { %>
+          <% for (let i = 0; i < 10 && i < news.length; i++) { %>
           <li class="cct-l">
-            <a class="cct-list" href="/detail/<%= info.id %>">
-              <p class="cct-title"><%= info.title %></p>
-                <p class="cct-date"><%= info.createdDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) %></p>
+            <a class="cct-list" href="/detail/<%= news[i].id %>">
+              <p class="cct-title"><%= news[i].title %></p>
+                <p class="cct-date"><%= news[i].createdDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) %></p>
             </a>
           </li>
-          <% }); %>
+          <% } %>
         </ul>
       </div>
     </section>
