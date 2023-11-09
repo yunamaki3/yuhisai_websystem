@@ -45,15 +45,21 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   connection.query(
-    'SELECT * FROM news',
+    'SELECT * FROM news ORDER BY createdDate DESC',
     (error, results) => {
       res.render('top.ejs', { news: results });
     }
   );
 });
 
-app.get('/detail', (req, res) => {
-  res.render('detail.ejs');
+app.get('/detail/:id', (req, res) => {
+  const id = req.params.id;
+  connection.query(
+    'SELECT * FROM news WHERE id = ?',[id],
+    (error, results) => {
+      res.render('detail.ejs', { news: results[0] });
+    }
+  );
 });
 
 app.get('/login', (req, res) => {
