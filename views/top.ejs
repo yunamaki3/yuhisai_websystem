@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %>
+</head>
+<body>
+  <%- include('sidepanel') %>
+  <div class="main">
+    <h1>雄飛祭オンラインシステム</h1>
+    <section>
+      <h2>実行委員会からのお知らせ</h2>
+      <div class="container">
+        <ul>
+          <% for (let i = 0; i < 10 && i < news.length; i++) { %>
+          <li class="cct-l">
+            <a class="cct-list" href="/detail/<%= news[i].id %>">
+              <p class="cct-title"><%= news[i].title %></p>
+                <p class="cct-date"><%= news[i].createdDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) %></p>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>階段装飾の申請</h2>
+      <div class="container">
+        <div class="c-content">
+          <p>階段装飾の申請用紙はこちらから印刷してください</p>
+          <button type="button" class="general-button"><span class="material-symbols-outlined">open_in_new</span>申請用紙</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>第一次企画書の提出</h2>
+      <div class="container">
+        <div class="c-content">
+          <p>いついつまでに第一次企画書提出しろやぼけ</p>
+          <button type="button" class="general-button"><span class="material-symbols-outlined">arrow_right_alt</span>第一次企画書</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
