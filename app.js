@@ -44,11 +44,22 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.render('top.ejs');
+  connection.query(
+    'SELECT * FROM news ORDER BY createdDate DESC',
+    (error, results) => {
+      res.render('top.ejs', { news: results });
+    }
+  );
 });
 
-app.get('/detail', (req, res) => {
-  res.render('detail.ejs');
+app.get('/detail/:id', (req, res) => {
+  const id = req.params.id;
+  connection.query(
+    'SELECT * FROM news WHERE id = ?',[id],
+    (error, results) => {
+      res.render('detail.ejs', { news: results[0] });
+    }
+  );
 });
 
 app.get('/login', (req, res) => {
@@ -57,6 +68,10 @@ app.get('/login', (req, res) => {
 
 app.get('/signup', (req, res) => {
   res.render('signup.ejs', { errors: [] });
+});
+
+app.get('/postnews',(req,res) => {
+  res.render('postnews.ejs', { errors: [] });
 });
 
 app.post('/login', (req, res) => {
@@ -137,6 +152,49 @@ app.post('/signup',
       }
     );
   });
+});
+
+app.post('/postnews',
+  (req, res,next) => {
+    const title = req.body.title;
+    const content = req.body.content;
+    const errors = [];
+    if(title === ""){
+      errors.push('タイトルが空です');
+    }
+    if(content === ""){
+      errors.push('本文が空です');
+    }
+    if(errors.length > 0){
+      res.render('postnews.ejs', { errors: errors });
+    } else {
+      next();
+    }
+  },(req,res,next) => {
+    const title = req.body.title;
+    const errors = [];
+    connection.query(
+      'SELECT * FROM news WHERE title = ?',
+      [title],
+      (error, results) => {
+        if(results.length > 0){
+          errors.push('このタイトルは既に使用されています');
+          res.render('postnews.ejs', { errors: errors });
+        } else {
+          next();
+        }
+      }
+    )
+  },(req,res) => {
+    const title = req.body.title;
+    const content = req.body.content;
+    connection.query(
+      'INSERT INTO news (title, body, createdDate) VALUES (?, ?, NOW())',
+      [title, content],
+      (error, results) => {
+        res.redirect('/');
+      }
+    );
 });
 
 app.get('/logout', (req, res) => {

@@ -95,6 +95,7 @@ section {
 }
 
 h1 {
+  color: #e0953a;
   margin-bottom: 20px;
 }
 
@@ -184,7 +185,7 @@ li {
   text-align: right;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  color: #70637d;
+  color: #000000;
 }
 
 .login {
@@ -221,6 +222,21 @@ li {
 }
 
 .general-input:focus {
+  border: 2px solid #e0953a;
+}
+
+.area-input {
+  font-family: 'Roboto', sans-serif;
+  width: 80%;
+  background-color: #f5f4f6;
+  height: 360px;
+  padding: 1em 1em;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.area-input:focus {
   border: 2px solid #e0953a;
 }
 

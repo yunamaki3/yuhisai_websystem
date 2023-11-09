@@ -11,24 +11,14 @@
       <h2>実行委員会からのお知らせ</h2>
       <div class="container">
         <ul>
+          <% news.forEach((info) => { %>
           <li class="cct-l">
-            <a class="cct-list" href="/detail">
-              <p class="cct-title">雄飛祭オンラインシステムを公開しました。</p>
-              <p class="cct-date">2021/10/10</p>
+            <a class="cct-list" href="/detail/<%= info.id %>">
+              <p class="cct-title"><%= info.title %></p>
+                <p class="cct-date"><%= info.createdDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }) %></p>
             </a>
           </li>
-          <li class="cct-l">
-            <a class="cct-list" href="#">
-              <p class="cct-title">雄飛祭オンラインシステムを公開しました。</p>
-              <p class="cct-date">2021/10/10</p>
-            </a>
-          </li>
-          <li class="cct-l">
-            <a class="cct-list" href="#">
-              <p class="cct-title">雄飛祭オンラインシステムを公開しました。</p>
-              <p class="cct-date">2021/10/10</p>
-            </a>
-          </li>
+          <% }); %>
         </ul>
       </div>
     </section>
