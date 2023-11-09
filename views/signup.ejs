@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %> 
+</head>
+<body class="mainbody">
+  <%- include('sidepanel') %>
+  <div class="main center">
+    <div class="login">
+      <h3>新規登録</h3>
+      <form action="/signup" method="POST">
+        <% if (errors.length>0) { %>
+          <div class="error">
+            <% errors.forEach (error => { %>
+            <p class="errormessage"><%= error %></p>
+            <% }); %>
+          </div>
+        <% } %>
+        <p class="guide">ユーザー名<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="username" placeholder="username">
+        <p class="guide">メールアドレス<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="email" placeholder="xxx@showa-shuei.ed.jp">
+        <p class="guide">パスワード<span class="must">必須</span></p>
+        <input class="general-input" type="password" name="password">
+        <!-- <button class="general-submit" type="submit"><span class="material-symbols-outlined">login</span>ログイン</button> -->
+        <input class="general-submit" type="submit" value="新規登録">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

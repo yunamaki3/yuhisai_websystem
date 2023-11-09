@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %> 
+</head>
+<body class="mainbody">
+  <%- include('sidepanel') %>
+  <div class="main center">
+    <div class="login">
+      <h3>ログイン</h3>
+      <form action="/login" method="POST">
+        <p class="guide">メールアドレス<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="email" placeholder="xxx@showa-shuei.ed.jp">
+        <p class="guide">パスワード<span class="must">必須</span></p>
+        <input class="general-input" type="password" name="password">
+        <!-- <button class="general-submit" type="submit"><span class="material-symbols-outlined">login</span>ログイン</button> -->
+        <input class="general-submit" type="submit" value="ログイン">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
