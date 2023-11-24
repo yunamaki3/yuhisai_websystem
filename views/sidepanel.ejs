@@ -5,15 +5,13 @@
     <p>システム</p>
   </div>
   <div class="sidemenu">
-    <div class="home">
-      <a class="sidemenulist" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
-      <% if(locals.isLoggedIn) { %>
-      <a class="sidemenulist" href="/postnews"><span class="material-symbols-outlined">add_circle</span>お知らせ投稿</a>
-      <% } else { %>
-      <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
-      <a class="sidemenulist" href="/signup"><span class="material-symbols-outlined">new_label</span>新規登録</a>
-      <% } %>
-    </div>
+    <a class="sidemenulist" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
+    <% if(locals.isLoggedIn) { %>
+    <a class="sidemenulist" href="/postnews"><span class="material-symbols-outlined">add_circle</span>お知らせ投稿</a>
+    <% } else { %>
+    <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
+    <a class="sidemenulist" href="/signup"><span class="material-symbols-outlined">new_label</span>新規登録</a>
+    <% } %>
   </div>
   <% if(locals.isLoggedIn) { %>
   <div class="hellouser">
