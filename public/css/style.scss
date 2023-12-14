@@ -6,6 +6,7 @@ $color-main-container: #edebef;
 $color-back-primary: #f5f4f6;
 $color-back-secondary: #70637d;
 $color-title-error: #d1242f;
+$color-back-error: #feebee;
 $color-title-warning: #9a6700;
 $color-title-important: #8250df;
 $color-title-tip: #8250df;
@@ -14,11 +15,12 @@ $color-button-hover: #fff7ee;
 
 @mixin notifi($color) {
   box-sizing: border-box;
-  border-left: 3px solid $color;
+  background-color: $color-back-error;
   padding: 8px 16px;
   margin-bottom: 16px;
   line-height: 2;
   font-size: 14px;
+  border-radius: 5px;
   h3 {
     align-items: center;
     display: inline-flex;
@@ -60,7 +62,7 @@ body {
     margin-left: 230px;
     padding: 0 36px;
     .container {
-      @mixin container;
+      @include container;
     }
   }
   section {
@@ -81,6 +83,9 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 24px;
+  }
+  textarea {
+    resize: none;
   }
 }
 
