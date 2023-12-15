@@ -75,6 +75,29 @@ app.get('/postnews',(req,res) => {
   res.render('postnews.ejs', { errors: [] });
 });
 
+app.get('/docs',(req,res) => {
+  connection.query(
+    'SELECT * FROM documents ORDER BY id DESC',
+    (error, results) => {
+      res.render('docs.ejs', { docs: results });
+    }
+  );
+});
+
+app.get('/docs/:id', (req, res) => {
+  const id = req.params.id;
+  connection.query(
+    'SELECT * FROM documents WHERE id = ?',[id],
+    (error, results) => {
+      res.render('doc.ejs', { docs: results[0] });
+    }
+  );
+});
+
+app.get('/postdoc',(req,res) => {
+  res.render('postdoc.ejs', { errors: [] });
+});
+
 app.post('/login', (req, res) => {
   const email = req.body.email;  
   const errors = [];
@@ -133,7 +156,7 @@ app.post('/signup',
       'SELECT * FROM users WHERE email = ?',
       [email],
       (error, results) => {
-        if(results.length > 0){
+        if(results && results.length > 0){
           errors.push('このメールアドレスは既に使用されています');
           res.render('signup.ejs', { errors: errors });
         } else {
@@ -183,7 +206,7 @@ app.post('/postnews',
       'SELECT * FROM news WHERE title = ?',
       [title],
       (error, results) => {
-        if(results.length > 0){
+        if(results && results.length > 0){
           errors.push('このタイトルは既に使用されています');
           res.render('postnews.ejs', { errors: errors });
         } else {
@@ -199,6 +222,54 @@ app.post('/postnews',
       [title, content],
       (error, results) => {
         res.redirect('/');
+      }
+    );
+});
+
+app.post('/postdocs',
+  (req,res,next) => {
+    const title = req.body.title;
+    const content = req.body.content;
+    const link = req.body.link;
+    const errors = [];
+    if(title === ""){
+      errors.push('タイトルが空です');
+    }
+    if(content === ""){
+      errors.push('説明が空です');
+    }
+    if(link === ""){
+      errors.push('リンクが空です');
+    }
+    if(errors.length > 0){
+      res.render('postdoc.ejs', { errors: errors });
+    } else {
+      next();
+    }
+  },(req,res,next) => {
+    const title = req.body.title;
+    const errors = [];
+    connection.query(
+      'SELECT * FROM documents WHERE title = ?',
+      [title],
+      (error, results) => {
+        if(results && results.length > 0){
+          errors.push('このタイトルは既に使用されています');
+          res.render('postnews.ejs', { errors: errors });
+        } else {
+          next();
+        }
+      }
+    )
+  },(req,res) => {
+    const title = req.body.title;
+    const link = req.body.link;
+    const content = req.body.content;
+    connection.query(
+      'INSERT INTO documents (title, link, content, createdDate) VALUES (?, ?, ?, NOW())',
+      [title, link, content],
+      (error, results) => {
+        res.redirect('/docs');
       }
     );
 });

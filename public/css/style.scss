@@ -38,6 +38,12 @@ $color-button-hover: #fff7ee;
   box-shadow: 0 8px 16px 0 $color-main-container;
   padding: 32px;
   border-radius: 10px;
+  .guide {
+    color: #2d2832;
+    margin-bottom: 0.5em;
+    font-size: 14px;
+    justify-content: center;
+  }
 }
 
 body {
@@ -125,6 +131,20 @@ body {
       &:hover {
         background-color: $color-back-primary;
       }
+    }
+    .sidemunuguide{
+      cursor: default;
+      box-sizing: border-box;
+      align-items: center;
+      font-size: 14px;
+      color: $color-back-secondary;
+      padding: 4px 16px 1px 32px;
+      height: 30px;
+      width: 100%;
+      display: inline-flex;
+      vertical-align: middle;
+      margin: 0;
+      margin-top: 10px;
     }
     .nowpage {
       color: $color-main-primary;

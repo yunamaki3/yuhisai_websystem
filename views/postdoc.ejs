@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %>
+</head>
+<body>
+  <%- include('sidepanel') %>
+  <div class="main">
+    <h1>資料を配信</h1>
+    <div class="container">
+      <form action="/postdocs" method="post">
+        <% if (errors.length>0) { %>
+          <div class="error">
+            <% errors.forEach (error => { %>
+            <p class="errormessage"><%= error %></p>
+            <% }); %>
+          </div>
+        <% } %>
+        <p class="guide">タイトル<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="title">
+        <p class="guide">説明<span class="must">必須</span></p>
+        <textarea class="area-input" name="content" cols="30" rows="10"></textarea>
+        <p class="guide">リンク<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="link" placeholder="https://...">
+        <input class="general-submit" type="submit" value="配信">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

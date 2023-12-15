@@ -29,6 +29,12 @@ body .main .container {
   padding: 32px;
   border-radius: 10px;
 }
+body .main .container .guide {
+  color: #2d2832;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  justify-content: center;
+}
 body section {
   margin-bottom: 48px;
 }
@@ -90,6 +96,20 @@ body textarea {
 }
 .sidepanel .sidemenu .sidemenulist:hover {
   background-color: #f5f4f6;
+}
+.sidepanel .sidemenu .sidemunuguide {
+  cursor: default;
+  box-sizing: border-box;
+  align-items: center;
+  font-size: 14px;
+  color: #70637d;
+  padding: 4px 16px 1px 32px;
+  height: 30px;
+  width: 100%;
+  display: inline-flex;
+  vertical-align: middle;
+  margin: 0;
+  margin-top: 10px;
 }
 .sidepanel .sidemenu .nowpage {
   color: #e0953a;
@@ -213,6 +233,12 @@ ul li {
   padding: 32px;
   border-radius: 10px;
   width: 400px;
+}
+.login .guide {
+  color: #2d2832;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  justify-content: center;
 }
 
 .center {
