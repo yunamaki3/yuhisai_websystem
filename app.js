@@ -1,5 +1,6 @@
 // net start mysql57 にてmysqlを起動すること忘れずに
 //mysql --user=root --passwordにてmysqlにログイン
+//comittはczで行う
 
 const e = require('express');
 const express = require('express');
@@ -63,7 +64,7 @@ app.get('/detail/:id', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.render('login.ejs');
+  res.render('login.ejs' , { errors: [] });
 });
 
 app.get('/signup', (req, res) => {
@@ -76,6 +77,7 @@ app.get('/postnews',(req,res) => {
 
 app.post('/login', (req, res) => {
   const email = req.body.email;  
+  const errors = [];
   connection.query(
     'SELECT * FROM users WHERE email = ?',
     [email],
@@ -91,9 +93,13 @@ app.post('/login', (req, res) => {
             req.session.userStatus = results[0].state;
             res.redirect('/');
           }else{
-            res.redirect('/login');
+            errors.push('ログインに失敗しました');
+            res.render('login.ejs', { errors: errors });
           }
         });
+      }else{
+        errors.push('ログインに失敗しました');
+        res.render('login.ejs', { errors: errors });
       }
     }
   )
