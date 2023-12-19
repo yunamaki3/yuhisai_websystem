@@ -314,39 +314,41 @@ ul li {
   cursor: pointer;
   align-items: center;
   display: inline-flex;
-  background-color: #e0953a;
-  color: #fff;
+  background-color: #fff;
+  color: #e0953a;
   font-size: 16px;
   outline: none;
-  border: 2px solid transparent;
+  border: 2px solid #e0953a;
   height: 48px;
   padding: 0 40px;
   outline: none;
   width: 100%;
   border-radius: 10px;
   margin-top: 30px;
+  transition: all 150ms;
 }
 .general-submit:hover {
-  background-color: #e2a150;
+  background-color: #e0953a;
+  color: #fff;
 }
 
 .error {
   box-sizing: border-box;
-  background-color: #feebee;
   padding: 8px 16px;
   margin-bottom: 16px;
   line-height: 2;
   font-size: 14px;
-  border-radius: 5px;
+  border-left: 0.25em solid #d1242f;
 }
 .error h3 {
+  display: flex;
   align-items: center;
-  display: inline-flex;
+  line-height: 1;
   vertical-align: middle;
   font-size: 16px;
   font-weight: 700;
   color: #d1242f;
-  margin-bottom: 2px;
+  margin-bottom: 16px;
 }
 .error .errormessage {
   margin: 0;

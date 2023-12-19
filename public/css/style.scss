@@ -13,22 +13,22 @@ $color-title-tip: #8250df;
 $color-title-note: #0969da;
 $color-button-hover: #fff7ee;
 
-@mixin notifi($color) {
+@mixin notifiError {
   box-sizing: border-box;
-  background-color: $color-back-error;
   padding: 8px 16px;
   margin-bottom: 16px;
   line-height: 2;
   font-size: 14px;
-  border-radius: 5px;
+  border-left: 0.25em solid $color-title-error;
   h3 {
+    display: flex;
     align-items: center;
-    display: inline-flex;
+    line-height: 1;
     vertical-align: middle;
     font-size: 16px;
     font-weight: 700;
-    color: $color;
-    margin-bottom: 2px;
+    color: $color-title-error;
+    margin-bottom: 16px;
   }
 }
 
@@ -342,24 +342,26 @@ ul {
   cursor: pointer;
   align-items: center;
   display: inline-flex;
-  background-color: $color-main-primary;
-  color: #fff;
+  background-color: #fff;
+  color: $color-main-primary;
   font-size: 16px;
   outline: none;
-  border: 2px solid transparent;
+  border: 2px solid $color-main-primary;
   height: 48px;
   padding: 0 40px;
   outline: none;
   width: 100%;
   border-radius: 10px;
   margin-top: 30px;
+  transition: all 150ms;
   &:hover {
-    background-color: #e2a150;
+    background-color: $color-main-primary;
+    color: #fff;
   }
 }
 
 .error {
-  @include notifi($color-title-error);
+  @include notifiError();
   .errormessage {
     margin: 0;
   }

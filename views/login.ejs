@@ -11,7 +11,7 @@
       <form action="/login" method="POST">
         <% if (errors.length>0) { %>
           <div class="error">
-            <h3>Caution</h3>
+            <h3><span class="material-symbols-outlined notifi-icon">report</span>Caution</h3>
             <% errors.forEach (error => { %>
             <p class="errormessage"><%= error %></p>
             <% }); %>
