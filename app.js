@@ -89,6 +89,7 @@ app.get('/docs/:id', (req, res) => {
   connection.query(
     'SELECT * FROM documents WHERE id = ?',[id],
     (error, results) => {
+      console.log(results);
       res.render('doc.ejs', { docs: results[0] });
     }
   );
@@ -133,23 +134,51 @@ app.post('/signup',
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
+    const code = req.body.code;
     const errors = [];
     if(username === ""){
-      errors.push('ユーザー名が空です');
+      errors.push('名前を入力してください');
     }
     if(email === ""){
-      errors.push('メールアドレスが空です');
+      errors.push('メールアドレスを入力してください');
     }
     if(password === ""){
-      errors.push('パスワードが空です');
+      errors.push('パスワードを入力してください');
+    }
+    if(code === ""){
+      errors.push('登録コードを入力してください');
     }
     if(errors.length > 0){
       res.render('signup.ejs', { errors: errors });
     } else {
       next();
     }
-  },
-  (req, res, next) => {
+  },(req,res,next) => {
+    const email = req.body.email;
+    const domain = email.split('@')[1];
+    const errors = [];
+    if(domain !== "showa-shuei.ed.jp"){
+      errors.push('このメールアドレスは使用できません');
+      errors.push('メールアドレスは学校発行のものを使用してください')
+      res.render('signup.ejs', { errors: errors });
+    } else {
+      next();
+    }
+  },(req,res,next) => {
+    const code = req.body.code;
+    const errors = [];
+    connection.query(
+      'SELECT * FROM invitecode',
+      (error, results) => {
+        if(results[0].code === code){
+          next();
+        } else {
+          errors.push('登録コードが間違っています');
+          res.render('signup.ejs', { errors: errors });
+        }
+      }
+    )
+  },(req, res, next) => {
     const email = req.body.email;
     const errors = [];
     connection.query(
@@ -174,6 +203,8 @@ app.post('/signup',
       'INSERT INTO users (username, email, password, state) VALUES (?, ?, ?, "Normal")',
       [username, email, hash],
       (error, results) => {
+        console.log(results);
+        console.log(error);
         req.session.userId = results.insertId;
         req.session.userName = username;
         req.session.userStatus = "Normal";
@@ -273,6 +304,42 @@ app.post('/postdocs',
       }
     );
 });
+
+app.get('/admin/invite', (req, res) => {
+  if(req.session.userStatus === "Admin"){
+    connection.query(
+      'DELETE FROM invitecode',
+      (error, results) => {
+        const code = String(generateRandomCode(6)).padStart(6, '0');
+        console.log(code);
+        connection.query(
+          'INSERT INTO invitecode (code) VALUES (?)',
+          [code],
+          (error, results) => {
+            connection.query(
+              'SELECT * FROM invitecode',
+              (error, results) => {
+                console.log(results);
+                res.render('setting.ejs', { code: results[0] });
+              }
+            );
+          }
+        );
+      }
+    );
+  } else {
+    res.redirect('/');
+  }
+});
+
+function generateRandomCode(length) {
+  let code = '';
+  const characters = '0123456789';
+  for (let i = 0; i < length; i++) {
+    code += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return code;
+}
 
 app.get('/logout', (req, res) => {
   req.session.destroy((error) => {

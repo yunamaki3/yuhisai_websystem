@@ -11,16 +11,18 @@
       <form action="/signup" method="POST">
         <% if (errors.length>0) { %>
           <div class="error">
-            <h3>Caution</h3>
+            <h3><span class="material-symbols-outlined notifi-icon">report</span>Caution</h3>
             <% errors.forEach (error => { %>
             <p class="errormessage"><%= error %></p>
             <% }); %>
           </div>
         <% } %>
-        <p class="guide">ユーザー名<span class="must">必須</span></p>
+        <p class="guide">登録コード<span class="must">必須</span></p>
+        <input class="general-input" type="text" name="code" placeholder="XXXXXX">
+        <p class="guide">名前<span class="must">必須</span></p>
         <input class="general-input" type="text" name="username" placeholder="username">
-        <p class="guide">メールアドレス<span class="must">必須</span></p>
-        <input class="general-input" type="text" name="email" placeholder="xxx@showa-shuei.ed.jp">
+        <p class="guide">学校メールアドレス<span class="must">必須</span></p>
+        <input class="general-input" type="email" name="email" placeholder="xxx@showa-shuei.ed.jp">
         <p class="guide">パスワード<span class="must">必須</span></p>
         <input class="general-input" type="password" name="password">
         <!-- <button class="general-submit" type="submit"><span class="material-symbols-outlined">login</span>ログイン</button> -->

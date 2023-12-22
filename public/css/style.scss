@@ -44,6 +44,19 @@ $color-button-hover: #fff7ee;
     font-size: 14px;
     justify-content: center;
   }
+  .bold-guide{
+    font-weight: 700;
+    color: #2d2832;
+    margin-bottom: 0.3em;
+    font-size: 16px;
+    justify-content: center;
+  }
+  .large-num{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+  }
 }
 
 body {

@@ -35,6 +35,19 @@ body .main .container .guide {
   font-size: 14px;
   justify-content: center;
 }
+body .main .container .bold-guide {
+  font-weight: 700;
+  color: #2d2832;
+  margin-bottom: 0.3em;
+  font-size: 16px;
+  justify-content: center;
+}
+body .main .container .large-num {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
 body section {
   margin-bottom: 48px;
 }
@@ -239,6 +252,19 @@ ul li {
   margin-bottom: 0.5em;
   font-size: 14px;
   justify-content: center;
+}
+.login .bold-guide {
+  font-weight: 700;
+  color: #2d2832;
+  margin-bottom: 0.3em;
+  font-size: 16px;
+  justify-content: center;
+}
+.login .large-num {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
 }
 
 .center {
