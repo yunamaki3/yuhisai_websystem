@@ -72,7 +72,11 @@ app.get('/signup', (req, res) => {
 });
 
 app.get('/postnews',(req,res) => {
-  res.render('postnews.ejs', { errors: [] });
+  if(req.session.userStatus === "Admin"){
+    res.render('postnews.ejs', { errors: [] });
+  } else {
+    res.redirect('/');
+  }
 });
 
 app.get('/docs',(req,res) => {
@@ -95,8 +99,16 @@ app.get('/docs/:id', (req, res) => {
   );
 });
 
+app.get('/proposal',(req,res) => {
+  res.render('proposal.ejs');
+});
+
 app.get('/postdoc',(req,res) => {
-  res.render('postdoc.ejs', { errors: [] });
+  if(req.session.userStatus === "Admin"){
+    res.render('postdoc.ejs', { errors: [] });
+  } else {
+    res.redirect('/');
+  }
 });
 
 app.post('/login', (req, res) => {
@@ -311,7 +323,6 @@ app.get('/admin/invite', (req, res) => {
       'DELETE FROM invitecode',
       (error, results) => {
         const code = String(generateRandomCode(6)).padStart(6, '0');
-        console.log(code);
         connection.query(
           'INSERT INTO invitecode (code) VALUES (?)',
           [code],
@@ -319,7 +330,6 @@ app.get('/admin/invite', (req, res) => {
             connection.query(
               'SELECT * FROM invitecode',
               (error, results) => {
-                console.log(results);
                 res.render('setting.ejs', { code: results[0] });
               }
             );

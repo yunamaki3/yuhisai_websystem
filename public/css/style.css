@@ -110,7 +110,7 @@ body textarea {
 .sidepanel .sidemenu .sidemenulist:hover {
   background-color: #f5f4f6;
 }
-.sidepanel .sidemenu .sidemunuguide {
+.sidepanel .sidemenu .sidemenuguide {
   cursor: default;
   box-sizing: border-box;
   align-items: center;
@@ -199,6 +199,10 @@ body textarea {
   text-align: center;
   color: #70637d;
   font-size: 14px;
+}
+.sidepanel .sidefooter {
+  background-color: #fff;
+  z-index: 10;
 }
 
 .cct-list {
@@ -364,7 +368,7 @@ ul li {
   margin-bottom: 16px;
   line-height: 2;
   font-size: 14px;
-  border-left: 0.25em solid #d1242f;
+  border-left: 0.25em solid rgb(209, 36, 47);
 }
 .error h3 {
   display: flex;
@@ -373,9 +377,82 @@ ul li {
   vertical-align: middle;
   font-size: 16px;
   font-weight: 700;
-  color: #d1242f;
+  color: rgb(209, 36, 47);
   margin-bottom: 16px;
 }
 .error .errormessage {
   margin: 0;
+}
+
+.proposal-statusbar {
+  margin: 10px 0;
+  width: 80%;
+  margin: 10px 0;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.proposal-statusbar .title {
+  width: 100%;
+  height: 40px;
+  padding: 10px 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.proposal-statusbar .status {
+  margin: 3px;
+  margin-right: 12px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  color: white;
+}
+.proposal-statusbar .contentsmain {
+  padding: 0 0 5px 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.er {
+  border-left: rgb(209, 36, 47) 4px solid;
+  background-color: rgba(209, 36, 47, 0.12);
+}
+.er .title {
+  color: rgb(209, 36, 47);
+}
+.er .status {
+  background-color: rgb(209, 36, 47);
+}
+
+.wa {
+  border-left: rgb(154, 103, 0) 4px solid;
+  background-color: rgba(154, 103, 0, 0.12);
+}
+.wa .title {
+  color: rgb(154, 103, 0);
+}
+.wa .status {
+  background-color: rgb(154, 103, 0);
+}
+
+.sc {
+  border-left: rgb(23, 130, 48) 4px solid;
+  background-color: rgba(23, 130, 48, 0.12);
+}
+.sc .title {
+  color: rgb(23, 130, 48);
+}
+.sc .status {
+  background-color: rgb(23, 130, 48);
+}
+
+.im {
+  border-left: rgb(130, 80, 223) 4px solid;
+  background-color: rgba(130, 80, 223, 0.12);
+}
+.im .title {
+  color: rgb(130, 80, 223);
+}
+.im .status {
+  background-color: rgb(130, 80, 223);
 }/*# sourceMappingURL=style.css.map */

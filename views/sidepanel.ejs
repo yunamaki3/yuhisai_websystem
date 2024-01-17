@@ -8,25 +8,31 @@
     <a class="sidemenulist" href="/"><span class="material-symbols-outlined">home</span>トップ</a>
     <a class="sidemenulist" href="/docs"><span class="material-symbols-outlined">article</span>配布資料</a>
     <% if(locals.isLoggedIn) { %>
-    <p class="sidemunuguide">各種配信</p>
+    <p class="sidemenuguide">各種配信</p>
     <a class="sidemenulist" href="/postnews"><span class="material-symbols-outlined">rss_feed</span>お知らせ投稿</a>
     <a class="sidemenulist" href="/postdoc"><span class="material-symbols-outlined">rss_feed</span>資料配信</a>
+    <p class="sidemenuguide">各種設定</p>
+    <a class="sidemenulist" href="/admin/invite"><span class="material-symbols-outlined"></span>登録コード</a>
     <% } else { %>
     <a class="sidemenulist" href="/login"><span class="material-symbols-outlined">login</span>ログイン</a>
     <a class="sidemenulist" href="/signup"><span class="material-symbols-outlined">new_label</span>新規登録</a>
     <% } %>
   </div>
   <% if(locals.isLoggedIn) { %>
-  <div class="hellouser">
-    <p><%= locals.userName %></p>
-    <p>としてログイン中</p>
-    <p class="userstate"><%= locals.userStatus %></p>
-  </div>
-  <div>
-    <a class="logout" href="/logout">ログアウト</a>
+  <div class="sidefooter">
+    <div class="hellouser">
+      <p><%= locals.userName %></p>
+      <p>としてログイン中</p>
+      <p class="userstate"><%= locals.userStatus %></p>
+    </div>
+    <div>
+      <a class="logout" href="/logout">ログアウト</a>
+    </div>
   </div>
   <% } %>
-  <div class="copyright">
-    <p>&copy; 2023 Yunamaki</p>
+  <div class="sidefooter">
+    <div class="copyright">
+      <p>&copy; 2023 Yunamaki</p>
+    </div>
   </div>
 </div>
