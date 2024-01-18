@@ -103,6 +103,10 @@ app.get('/proposal',(req,res) => {
   res.render('proposal.ejs');
 });
 
+app.get('/proposal/edit',(req,res) => {
+  res.render('editpro.ejs');
+});
+
 app.get('/postdoc',(req,res) => {
   if(req.session.userStatus === "Admin"){
     res.render('postdoc.ejs', { errors: [] });

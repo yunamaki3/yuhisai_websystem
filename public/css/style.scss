@@ -15,6 +15,8 @@ $cl-noti-tip: rgb(23, 130, 48);
 $cl-noti-tip-b: rgba(23, 130, 48, 0.12);
 $cl-noti-note: rgb(13, 103, 221);
 $cl-noti-note-b: rgba(13, 103, 221, 0.12);
+$cl-noti-black: rgb(0, 0, 0);
+$cl-noti-black-b: rgba(0, 0, 0, 0.12);
 $cl-btn-hover: #fff7ee;
 
 @mixin notifiError {
@@ -80,7 +82,18 @@ body {
   .main {
     min-height: 100vh;
     box-sizing: border-box;
-    width: 1000px;;
+    width: 1000px;
+    margin: 64px auto 0 auto;
+    margin-left: 230px;
+    padding: 0 36px;
+    .container {
+      @include container;
+    }
+  }
+  .bigmain {
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
     margin: 64px auto 0 auto;
     margin-left: 230px;
     padding: 0 36px;
@@ -317,6 +330,19 @@ ul {
   }
 }
 
+.general-select {
+  width: 360px;
+  background-color: $cl-b-primary;
+  height: 48px;
+  padding: 0 1em;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  &:focus {
+    border: 2px solid $cl-m-primary;
+  }
+}
+
 .area-input {
   font-family: 'Roboto', sans-serif;
   width: 80%;
@@ -459,4 +485,21 @@ ul {
   .status {
     background-color: $cl-noti-important;
   }
+}
+
+.br {
+  border-left: $cl-noti-black 4px solid;
+  background-color: $cl-noti-black-b;
+  .title {
+    color: $cl-noti-black;
+  }
+  .status {
+    background-color: $cl-noti-black;
+  }
+}
+
+.proq{
+  display: flex;
+  align-items: center;
+  
 }
