@@ -6,40 +6,61 @@
 <body>
   <%- include('sidepanel') %>
   <div class="main">
-    <h1>第一次企画書</h1>
     <!-- your code here -->
+    <h1>第一次企画書</h1>
     <div class="container">
-      <form action="/proposal/edit" method="POST">
-        <h3>基本情報<span class="must">人名の入力は敬称略で行ってください。また、姓と名の間にはスペースを入れないでください。</span></h3>
-        <p class="guide">企画団体区分</p>
-        <select class="general-select" name="kubun">
-          <option hidden>選択してください。</option>
-          <option value="general">一般参加</option>
-          <option value="club">部参加</option>
-          <option value="volunteer">有志</option>
-        </select>
-        <p class="guide">企画団体名</p>
-        <input class="general-input" type="text" name="name" placeholder="X年X組 , ○○部">
-        <p class="guide">団体名</p>
-        <input class="general-input" type="text" name="groupname" placeholder="パンフレットに表示されます">
-        <p class="guide">顧問名</p>
-        <input class="general-input" type="text" name="teacher" placeholder="">
-        <p class="guide">団体責任者</p>
-        <input class="general-input" type="text" name="leader" placeholder="">
-        <p class="guide">会計責任者</p>
-        <input class="general-input" type="text" name="accountant" placeholder="">
-        <p class="guide">広報責任者</p>
-        <input class="general-input" type="text" name="pr" placeholder="">
-        <p class="guide">活動希望場所</p>
-        <input class="general-input" type="text" name="place" placeholder="Ex.自教室">
-        <p class="guide">実施概要</p>
-        <textarea class="area-input" name="outline" placeholder="120字程度で簡潔に入力してください。"></textarea>
-        <br>
-        <input class="general-submit" type="submit" value="保存">
-        <p class="guide">※このボタンは提出ではありません。</p>
-      </form>
+      <h3>シートを選択してください。</h3>
+      <ul>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">基本情報</p>
+            <p class="cct-date">提出できます</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">会計情報</p>
+            <p class="cct-date">提出できます</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">学校備品使用計画</p>
+            <p class="cct-date">提出できません</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">物品使用計画</p>
+            <p class="cct-date">提出できません</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">備品貸出請求</p>
+            <p class="cct-date">提出できません</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">当日活動計画</p>
+            <p class="cct-date">提出できません</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">活動場所装飾計画</p>
+            <p class="cct-date">提出できません</p>
+          </a>
+        </li>
+        <li class="cct-l">
+          <a class="cct-list" href="/proposal/edit/kihon">
+            <p class="cct-title">異装届</p>
+            <p class="cct-date">提出できません</p>
+          </a>
+        </li>
+      </ul>
     </div>
-    
   </div>
 </body>
 </html>

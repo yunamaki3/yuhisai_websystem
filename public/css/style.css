@@ -432,6 +432,7 @@ ul li {
 }
 
 .proposal-statusbar {
+  padding-right: 20px;
   margin: 10px 0;
   width: 80%;
   margin: 10px 0;
@@ -518,4 +519,25 @@ ul li {
 .proq {
   display: flex;
   align-items: center;
+}
+
+.smallbtn {
+  margin: 20px 0 10px 0;
+}
+
+.smallbtn a {
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+  height: 32px;
+  padding: 0 20px;
+  margin-right: 10px;
+  transition: background-color 150ms, color 150ms;
+}
+.smallbtn a:hover {
+  background-color: #f7f7f7;
 }/*# sourceMappingURL=style.css.map */
