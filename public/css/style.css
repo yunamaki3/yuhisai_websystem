@@ -332,6 +332,14 @@ ul li {
   border: 2px solid #e0953a;
 }
 
+.long {
+  width: 500px;
+}
+
+.small {
+  width: 150px;
+}
+
 .general-select {
   width: 360px;
   background-color: #f5f4f6;
@@ -432,7 +440,7 @@ ul li {
 }
 
 .proposal-statusbar {
-  padding-right: 20px;
+  padding-right: 30px;
   margin: 10px 0;
   width: 80%;
   margin: 10px 0;
@@ -516,6 +524,17 @@ ul li {
   background-color: rgb(0, 0, 0);
 }
 
+.no {
+  border-left: rgb(13, 103, 221) 4px solid;
+  background-color: rgba(13, 103, 221, 0.12);
+}
+.no .title {
+  color: rgb(13, 103, 221);
+}
+.no .status {
+  background-color: rgb(13, 103, 221);
+}
+
 .proq {
   display: flex;
   align-items: center;
@@ -540,4 +559,39 @@ ul li {
 }
 .smallbtn a:hover {
   background-color: #f7f7f7;
+}
+
+.kaikei {
+  width: 90%;
+}
+.kaikei td {
+  border-bottom: 1px solid #efedeb;
+  border-top: 1px solid #efedeb;
+  padding: 10px 0;
+}
+.kaikei .number {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  width: 5%;
+}
+.kaikei .syouhin {
+  width: 40%;
+}
+.kaikei .tanka {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 10%;
+}
+.kaikei .kosuu {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 10%;
+}
+.kaikei .syoukei {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 20%;
+}
+.kaikei .edit {
+  width: 15%;
 }/*# sourceMappingURL=style.css.map */

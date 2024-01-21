@@ -330,6 +330,14 @@ ul {
   }
 }
 
+.long {
+  width: 500px;
+}
+
+.small {
+  width: 150px;
+}
+
 .general-select {
   width: 360px;
   background-color: $cl-b-primary;
@@ -415,7 +423,7 @@ ul {
 }
 
 .proposal-statusbar {
-  padding-right: 20px;
+  padding-right: 30px;
   margin: 10px 0;
   width: 80%;
   margin: 10px 0;
@@ -499,6 +507,17 @@ ul {
   }
 }
 
+.no {
+  border-left: $cl-noti-note 4px solid;
+  background-color: $cl-noti-note-b;
+  .title {
+    color: $cl-noti-note;
+  }
+  .status {
+    background-color: $cl-noti-note;
+  }
+}
+
 .proq{
   display: flex;
   align-items: center;
@@ -523,5 +542,40 @@ ul {
   transition: background-color 150ms, color 150ms;
   &:hover {
     background-color: #f7f7f7;
+  }
+}
+
+.kaikei {
+  width: 90%;
+  td {
+    border-bottom: 1px solid #efedeb;
+    border-top: 1px solid #efedeb;
+    padding: 10px 0;
+  }
+  .number {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    width: 5%;
+  }
+  .syouhin {
+    width: 40%;
+  }
+  .tanka {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: 10%;
+  }
+  .kosuu {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: 10%;
+  }
+  .syoukei {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: 20%;
+  }
+  .edit {
+    width: 15%;
   }
 }

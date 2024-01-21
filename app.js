@@ -111,6 +111,10 @@ app.get('/proposal/edit/kihon',(req,res) => {
   res.render('editpro_kihon.ejs');
 });
 
+app.get('/proposal/edit/kaikei',(req,res) => {
+  res.render('editpro_kaikei.ejs');
+});
+
 app.get('/postdoc',(req,res) => {
   if(req.session.userStatus === "Admin"){
     res.render('postdoc.ejs', { errors: [] });
